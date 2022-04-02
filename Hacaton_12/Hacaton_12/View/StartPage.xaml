@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodel="clr-namespace:Hacaton_12.ViewModel"
-             x:Class="Hacaton_12.View.StartPage">
+             x:Class="Hacaton_12.View.StartPage"
+             x:Name="StartPageView"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False">
     <ContentPage.BindingContext>
         <viewmodel:StartPageListViewModel/>
     </ContentPage.BindingContext>
@@ -11,7 +14,7 @@
                 <DataTemplate>
                     <StackLayout>
                         <Frame Margin='3'>
-                            <ImageButton Source="{Binding Name}" Command="{Binding OpenPictureCommand}"></ImageButton>
+                            <ImageButton Source="{Binding Name}" Command="{Binding Source={x:Reference StartPageView}, Path=BindingContext.OpenPictureCommand}"></ImageButton>
                         </Frame>
                     </StackLayout>
                 </DataTemplate>

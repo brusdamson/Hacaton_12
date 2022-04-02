@@ -32,9 +32,9 @@ namespace Hacaton_12.ViewModel
         }
 
         
-        private void OpenPicture()
+        private async void OpenPicture()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new ImageView());
+            await Application.Current.MainPage.Navigation.PushAsync(new ImageView());
         }
 
         StartPageViewModel SelectedImage
