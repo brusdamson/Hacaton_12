@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hacaton_12.Android", "Hacaton_12\Hacaton_12.Android\Hacaton_12.Android.csproj", "{51F9B9D6-2FF8-4B8C-990E-99D8C3D73628}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hacaton_12", "Hacaton_12\Hacaton_12\Hacaton_12.csproj", "{2B9D877D-84EE-4436-8059-DA4841B74EC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51F9B9D6-2FF8-4B8C-990E-99D8C3D73628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F9B9D6-2FF8-4B8C-990E-99D8C3D73628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F9B9D6-2FF8-4B8C-990E-99D8C3D73628}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{51F9B9D6-2FF8-4B8C-990E-99D8C3D73628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F9B9D6-2FF8-4B8C-990E-99D8C3D73628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51F9B9D6-2FF8-4B8C-990E-99D8C3D73628}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2B9D877D-84EE-4436-8059-DA4841B74EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B9D877D-84EE-4436-8059-DA4841B74EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B9D877D-84EE-4436-8059-DA4841B74EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B9D877D-84EE-4436-8059-DA4841B74EC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E8628E0-B0E6-40EB-A786-A7B445ED6624}
+	EndGlobalSection
+EndGlobal
