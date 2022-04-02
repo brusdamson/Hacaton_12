@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker" xmlns:viewmodel="clr-namespace:Hacaton_12.ViewModel"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker" xmlns:viewmodel="clr-namespace:Hacaton_12.ViewModel" xmlns:zoomscrollview="clr-namespace:Xamarin.Forms.ZoomScrollView;assembly=Xamarin.Forms.ZoomScrollView" xmlns:pinch="clr-namespace:Xamarin.Forms.PinchZoomImage;assembly=Xamarin.Forms.PinchZoomImage"
              x:Class="Hacaton_12.View.ImageView"
              x:Name="ImageViewPage"
              NavigationPage.HasNavigationBar="False"
@@ -21,11 +21,19 @@
 
         <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Source="{Binding Name}"></Image>
         <ImageButton Grid.Column="2" Grid.Row="0"/>
+            <ImageButton Grid.Column="0" Grid.Row="0"></ImageButton>
+            <ImageButton Grid.Column="2" Grid.Row="0"></ImageButton>
+            <pinch:PinchZoom Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                <pinch:PinchZoom.Content>
+                    <Image Source="{Binding Name}" />
+                </pinch:PinchZoom.Content>
+            </pinch:PinchZoom>
+            <ImageButton Grid.Column="0" Grid.Row="0" Source="BackImage.xml"></ImageButton>
+            <ImageButton Grid.Column="2" Grid.Row="0"/>
 
         <ImageButton Grid.Column="0" Grid.Row="2" Source="ResetImage.xml"></ImageButton>
         <ImageButton Command="{Binding OpenColorPicker}" Grid.Column="1" Grid.Row="2"></ImageButton>
         <ImageButton Grid.Column="2" Grid.Row="2" Source="SaveImage.xml"></ImageButton>
         
     </Grid>
-    
 </ContentPage>
