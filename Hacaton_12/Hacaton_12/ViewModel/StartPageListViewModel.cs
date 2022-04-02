@@ -10,10 +10,10 @@ using Xamarin.Forms;
 
 namespace Hacaton_12.ViewModel
 {
-    internal class StartPageListViewModel : INotifyPropertyChanged
+    public class StartPageListViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public ObservableCollection<Picture> Pictures { get; set; }
+        public ObservableCollection<StartPageViewModel> Pictures { get; set; }
 
         #region cmd
         public ICommand OpenPictureCommand { get; protected set; }
@@ -24,21 +24,35 @@ namespace Hacaton_12.ViewModel
         StartPageViewModel selectedImage;
         public StartPageListViewModel()
         {
-            Pictures = new ObservableCollection<Picture>() { new Picture { Id = 1, Name = "fox.xml"} };
-            OpenPictureCommand = new Command(OpenPicture);
+            Pictures = new ObservableCollection<StartPageViewModel>();
+            Pictures.Add(new StartPageViewModel() { Id = 1, Name = "fox.xml"});
+            Pictures.Add(new StartPageViewModel() { Id = 2, Name = "fox.xml" });
+            OpenPictureCommand = new Command<StartPageViewModel>(OpenPicture);
+            
             
             
             //SaveCommand = new Command(SavePicture);
             //BackCommand = new Command(Back);
         }
-
-        
-        private async void OpenPicture()
+        private CollectionView collectionView;
+        public CollectionView CollectionView
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new ImageView());
+            get
+            {
+                return collectionView;
+            }
+            set
+            {
+                collectionView = value;
+                OnPropertyChanged(nameof(CollectionView));
+            }
+        }
+        private async void OpenPicture(StartPageViewModel startPageViewModel)
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new ImageView(startPageViewModel));
         }
 
-        StartPageViewModel SelectedImage
+        public StartPageViewModel SelectedImage
         {
             get { return selectedImage; }
             set
@@ -48,7 +62,7 @@ namespace Hacaton_12.ViewModel
                     StartPageViewModel tempView = value;
                     selectedImage = null;
                     OnPropertyChanged(nameof(SelectedImage));
-                    //Application.Current.MainPage.Navigation.PushAsync();
+                    Application.Current.MainPage.Navigation.PushAsync(new ImageView(tempView));
                 }
             }
         }

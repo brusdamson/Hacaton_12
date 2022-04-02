@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace Hacaton_12.ViewModel
 {
-    internal class StartPageViewModel : INotifyPropertyChanged
+    public class StartPageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         StartPageListViewModel _lvm;
@@ -23,6 +23,7 @@ namespace Hacaton_12.ViewModel
         {
             Picture = new Picture();
             OpenColorPicker = new Command(OpenColorPickerPage);
+            
         }
         #endregion
         public StartPageListViewModel ListViewModel
