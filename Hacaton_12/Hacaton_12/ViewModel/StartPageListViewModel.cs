@@ -1,4 +1,5 @@
 ﻿using Hacaton_12.Model;
+using Hacaton_12.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,14 +19,22 @@ namespace Hacaton_12.ViewModel
         public ICommand OpenPictureCommand { get; protected set; }
         public ICommand SaveCommand { get; protected set; }
         public ICommand BackCommand { get; protected set; }
+        
         #endregion
         StartPageViewModel selectedImage;
         public StartPageListViewModel()
         {
             Pictures = new ObservableCollection<Picture>() { new Picture { Id = 1, Name = "fox.xml"} };
-            //OpenPictureCommand = new Command(OpenPicture);
+            OpenPictureCommand = new Command(OpenPicture);
+            
             //SaveCommand = new Command(SavePicture);
             //BackCommand = new Command(Back);
+        }
+
+        
+        private void OpenPicture()
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new ImageView());
         }
 
         StartPageViewModel SelectedImage

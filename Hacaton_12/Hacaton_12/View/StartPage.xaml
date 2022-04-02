@@ -5,16 +5,18 @@
     <ContentPage.BindingContext>
         <viewmodel:StartPageListViewModel/>
     </ContentPage.BindingContext>
-    
-    <CollectionView ItemsSource="{Binding Pictures}" ItemsLayout="VerticalGrid, 2" Margin="5">
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <StackLayout>
-                    <Frame Margin='10'>
-                        <ImageButton Source="{Binding Name}"></ImageButton>
-                    </Frame>
-                </StackLayout>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+    <ScrollView>
+        <CollectionView ItemsSource="{Binding Pictures}" ItemsLayout="VerticalGrid, 2" Margin="5">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Frame Margin='3'>
+                            <ImageButton Source="{Binding Name}" Command="{Binding OpenPictureCommand}"></ImageButton>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ScrollView>
+
 </ContentPage>

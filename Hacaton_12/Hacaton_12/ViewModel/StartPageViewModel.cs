@@ -1,8 +1,11 @@
 ﻿using Hacaton_12.Model;
+using Hacaton_12.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace Hacaton_12.ViewModel
 {
@@ -12,10 +15,14 @@ namespace Hacaton_12.ViewModel
         StartPageListViewModel _lvm;
         public Picture Picture { get; private set; }
 
+        #region cmd
+        public ICommand OpenColorPicker { get; protected set; }
+        #endregion
         #region ctor
         public StartPageViewModel()
         {
             Picture = new Picture();
+            OpenColorPicker = new Command(OpenColorPickerPage);
         }
         #endregion
         public StartPageListViewModel ListViewModel
@@ -60,6 +67,9 @@ namespace Hacaton_12.ViewModel
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-        
+        private void OpenColorPickerPage()
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new ColorPickerPage());
+        }
     }
 }
