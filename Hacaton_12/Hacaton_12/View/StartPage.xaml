@@ -5,11 +5,12 @@
     <ContentPage.BindingContext>
         <viewmodel:StartPageListViewModel/>
     </ContentPage.BindingContext>
+    
     <ScrollView>
         <CollectionView ItemsSource="{Binding Pictures}" ItemsLayout="VerticalGrid, 2" Margin="5">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout>
+                    <StackLayout Background="MainBackgrountImage.xml">
                         <Frame Margin='3'>
                             <ImageButton Source="{Binding Name}" Command="{Binding OpenPictureCommand}"></ImageButton>
                         </Frame>

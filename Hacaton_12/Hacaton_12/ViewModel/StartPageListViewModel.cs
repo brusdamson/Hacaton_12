@@ -27,6 +27,7 @@ namespace Hacaton_12.ViewModel
             Pictures = new ObservableCollection<Picture>() { new Picture { Id = 1, Name = "fox.xml"} };
             OpenPictureCommand = new Command(OpenPicture);
             
+            
             //SaveCommand = new Command(SavePicture);
             //BackCommand = new Command(Back);
         }
