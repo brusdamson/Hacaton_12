@@ -10,8 +10,9 @@ namespace Hacaton_12
         public App()
         {
             InitializeComponent();
+            
+            MainPage = new NavigationPage(new StartPage());
 
-            MainPage = new StartPage();
         }
 
         protected override void OnStart()

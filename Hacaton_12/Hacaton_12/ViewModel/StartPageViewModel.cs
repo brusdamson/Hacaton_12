@@ -69,7 +69,7 @@ namespace Hacaton_12.ViewModel
         }
         private void OpenColorPickerPage()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new ColorPickerPage());
+            Application.Current.MainPage.Navigation.PushModalAsync(new ColorPickerPage());
         }
     }
 }
