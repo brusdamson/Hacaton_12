@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodel="clr-namespace:Hacaton_12.ViewModel"
              x:Class="Hacaton_12.View.StartPage">
     <ContentPage.BindingContext>
-        <viewmodel:StartPageViewModel/>
+        <viewmodel:StartPageListViewModel/>
     </ContentPage.BindingContext>
     
     <CollectionView ItemsSource="{Binding Pictures}" ItemsLayout="VerticalGrid, 2" Margin="5">
@@ -11,7 +11,7 @@
             <DataTemplate>
                 <StackLayout>
                     <Frame Margin='10'>
-                        <ImageButton Source="{Binding SelectedImage.Name}"></ImageButton>
+                        <ImageButton Source="{Binding Name}"></ImageButton>
                     </Frame>
                 </StackLayout>
             </DataTemplate>

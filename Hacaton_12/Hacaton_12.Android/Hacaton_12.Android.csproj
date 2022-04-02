@@ -83,7 +83,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\fox.xml" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hacaton_12\Hacaton_12.csproj">
       <Project>{32406D65-9711-439B-B5B4-C2863F63B2BC}</Project>
