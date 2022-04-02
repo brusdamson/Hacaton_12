@@ -25,8 +25,15 @@ namespace Hacaton_12.ViewModel
         public StartPageListViewModel()
         {
             Pictures = new ObservableCollection<StartPageViewModel>();
-            Pictures.Add(new StartPageViewModel() { Id = 1, Name = "fox.xml"});
-            Pictures.Add(new StartPageViewModel() { Id = 2, Name = "fox.xml" });
+            Pictures.Add(new StartPageViewModel() { Id = 1, Name = "11.jpg"});
+            Pictures.Add(new StartPageViewModel() { Id = 2, Name = "22.jpg" });
+            Pictures.Add(new StartPageViewModel() { Id = 3, Name = "33.jpg" });
+            Pictures.Add(new StartPageViewModel() { Id = 4, Name = "44.jpg" });
+            Pictures.Add(new StartPageViewModel() { Id = 5, Name = "55.jpg" });
+            Pictures.Add(new StartPageViewModel() { Id = 6, Name = "66.jpg" });
+            Pictures.Add(new StartPageViewModel() { Id = 7, Name = "77.jpg" });
+            Pictures.Add(new StartPageViewModel() { Id = 8, Name = "88.jpg" });
+
             OpenPictureCommand = new Command<StartPageViewModel>(OpenPicture);
             
             
