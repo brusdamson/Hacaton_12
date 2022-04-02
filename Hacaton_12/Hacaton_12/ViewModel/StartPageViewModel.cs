@@ -60,5 +60,6 @@ namespace Hacaton_12.ViewModel
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
+        
     }
 }
