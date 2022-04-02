@@ -109,28 +109,34 @@
     <AndroidResource Include="Resources\drawable\SaveImage.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\11.jpg" />
+    <AndroidResource Include="Resources\drawable\33.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\22.jpg" />
+    <AndroidResource Include="Resources\drawable\44.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\33.jpg" />
+    <AndroidResource Include="Resources\drawable\55.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\44.jpg" />
+    <AndroidResource Include="Resources\drawable\66.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\55.jpg" />
+    <AndroidResource Include="Resources\drawable\77.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\66.jpg" />
+    <AndroidResource Include="Resources\drawable\88.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\77.jpg" />
+    <AndroidResource Include="Resources\drawable\11.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\88.jpg" />
+    <AndroidResource Include="Resources\drawable\22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\step_backward.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
