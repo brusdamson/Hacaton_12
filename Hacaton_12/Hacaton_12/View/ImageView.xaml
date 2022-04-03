@@ -7,28 +7,23 @@
              NavigationPage.HasBackButton="False">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="30"></ColumnDefinition>
+            <ColumnDefinition Width="70"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="30"></ColumnDefinition>
+            <ColumnDefinition Width="70"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
         </Grid.RowDefinitions>
-
-        <ImageButton Grid.Column="0" Grid.Row="0"></ImageButton>
-        <ImageButton Grid.Column="2" Grid.Row="0"></ImageButton>
 
         <pinch:PinchZoom Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
             <pinch:PinchZoom.Content>
                 <Image Source="{Binding Name}"></Image>
             </pinch:PinchZoom.Content>
         </pinch:PinchZoom>
-        
+
         <ImageButton Grid.Column="0" Grid.Row="0" Source="BackImage.xml"></ImageButton>
-        <ImageButton Grid.Column="2" Grid.Row="0"/>
-        
 
         <ImageButton Grid.Column="0" Grid.Row="2" Source="ResetImage.xml"></ImageButton>
         <ImageButton Command="{Binding OpenColorPicker}" Grid.Column="1" Grid.Row="2"></ImageButton>
