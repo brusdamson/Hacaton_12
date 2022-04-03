@@ -24,15 +24,17 @@ namespace Hacaton_12.ViewModel
         StartPageViewModel selectedImage;
         public StartPageListViewModel()
         {
-            Pictures = new ObservableCollection<StartPageViewModel>();
-            Pictures.Add(new StartPageViewModel() { Id = 1, Name = "11.jpg"});
-            Pictures.Add(new StartPageViewModel() { Id = 2, Name = "22.jpg" });
-            Pictures.Add(new StartPageViewModel() { Id = 3, Name = "33.jpg" });
-            Pictures.Add(new StartPageViewModel() { Id = 4, Name = "44.jpg" });
-            Pictures.Add(new StartPageViewModel() { Id = 5, Name = "55.jpg" });
-            Pictures.Add(new StartPageViewModel() { Id = 6, Name = "66.jpg" });
-            Pictures.Add(new StartPageViewModel() { Id = 7, Name = "77.jpg" });
-            Pictures.Add(new StartPageViewModel() { Id = 8, Name = "88.jpg" });
+            Pictures = new ObservableCollection<StartPageViewModel>
+            {
+                new StartPageViewModel() { Id = 1, Name = "Bart.png" },
+                new StartPageViewModel() { Id = 2, Name = "Bart2.png" },
+                new StartPageViewModel() { Id = 3, Name = "bear.png" },
+                new StartPageViewModel() { Id = 4, Name = "horse.png" },
+                new StartPageViewModel() { Id = 5, Name = "lion.png" },
+                new StartPageViewModel() { Id = 6, Name = "Olenb.png" },
+                new StartPageViewModel() { Id = 7, Name = "Olenb2.png" },
+                new StartPageViewModel() { Id = 8, Name = "One.png" }
+            };
 
             OpenPictureCommand = new Command<StartPageViewModel>(OpenPicture);
             
@@ -75,8 +77,7 @@ namespace Hacaton_12.ViewModel
         }
         protected void OnPropertyChanged(string propName)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }
     }
 }

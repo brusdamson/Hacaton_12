@@ -8,23 +8,23 @@
     <ContentPage.BindingContext>
         <viewmodel:StartPageListViewModel/>
     </ContentPage.BindingContext>
-    <ContentPage.Content>
-        <Label FontFamily="Irish" Text="Hacolor" FontSize="60"/>
-    </ContentPage.Content>
     <ScrollView>
-        <CollectionView ItemsSource="{Binding Pictures}" ItemsLayout="VerticalGrid, 2">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout>
-                        <Frame Padding="3" BackgroundColor="White" CornerRadius="20" Margin="20, 50, 20, 0">
-                            <ImageButton WidthRequest="140" MinimumHeightRequest="100" BackgroundColor="Transparent" Source="{Binding Name}"
+        <StackLayout>
+            <Label FontFamily="Irish" FontSize="65" Text="Hacolor" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="Center"/>
+            <CollectionView ItemsSource="{Binding Pictures}" ItemsLayout="VerticalGrid, 2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame Padding="3" BackgroundColor="White" CornerRadius="20" Margin="20, 50, 20, 0">
+                                <ImageButton WidthRequest="150" MinimumWidthRequest="150" HeightRequest="200" HorizontalOptions="Fill" BackgroundColor="Transparent" Source="{Binding Name}"
                                          Command="{Binding Source={x:Reference StartPageView}, Path=BindingContext.OpenPictureCommand}" 
                                          CommandParameter="{Binding .}"></ImageButton>
-                        </Frame>
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
     </ScrollView>
 
 </ContentPage>
