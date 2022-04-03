@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker" xmlns:viewmodel="clr-namespace:Hacaton_12.ViewModel" xmlns:pinch="clr-namespace:Xamarin.Forms.PinchZoomImage;assembly=Xamarin.Forms.PinchZoomImage"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker" xmlns:viewmodel="clr-namespace:Hacaton_12.ViewModel" xmlns:pinch="clr-namespace:Xamarin.Forms.PinchZoomImage;assembly=Xamarin.Forms.PinchZoomImage" xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms" xmlns:tt="clr-namespace:TouchTracking.Forms;assembly=TouchTracking.Forms"
              x:Class="Hacaton_12.View.ImageView"
              x:Name="ImageViewPage"
              NavigationPage.HasNavigationBar="False"
@@ -10,6 +10,7 @@
             <ColumnDefinition Width="30"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="30"></ColumnDefinition>
+            <ColumnDefinition Width="30"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
@@ -18,14 +19,15 @@
         </Grid.RowDefinitions>
 
         <ImageButton Grid.Column="0" Grid.Row="0"></ImageButton>
-        <ImageButton Grid.Column="2" Grid.Row="0"></ImageButton>
+        <ImageButton Grid.Column="3" Grid.Row="0"></ImageButton>
 
-        <pinch:PinchZoom Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
-            <pinch:PinchZoom.Content>
-                <Image Source="{Binding Name}"></Image>
-            </pinch:PinchZoom.Content>
-        </pinch:PinchZoom>
+        <Image Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill" Source="{Binding Name}">
+            <Image.Effects>
+                <tt:TouchEffect Capture="False" TouchAction = "TouchEffect_TouchAction"/>
+            </Image.Effects>
+        </Image>
         
+
         <ImageButton Grid.Column="0" Grid.Row="0" Source="BackImage.xml"></ImageButton>
         <ImageButton Grid.Column="2" Grid.Row="0"/>
         

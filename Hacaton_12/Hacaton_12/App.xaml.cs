@@ -10,7 +10,7 @@ namespace Hacaton_12
         public App()
         {
             InitializeComponent();
-            
+
             MainPage = new NavigationPage(new StartPage());
 
         }

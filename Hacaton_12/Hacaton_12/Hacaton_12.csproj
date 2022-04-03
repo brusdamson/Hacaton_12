@@ -20,6 +20,8 @@
 
   <ItemGroup>
     <PackageReference Include="ColorPicker.Xamarin.Forms" Version="1.3.4.21" />
+    <PackageReference Include="SkiaSharp" Version="2.80.3" />
+    <PackageReference Include="TouchTracking.Forms" Version="1.1.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="Xamarin.Forms.PinchZoomImage" Version="1.2.0" />
@@ -33,6 +35,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\StartPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\TestPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
