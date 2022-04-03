@@ -26,23 +26,31 @@ namespace Hacaton_12.ViewModel
         {
             Pictures = new ObservableCollection<StartPageViewModel>
             {
-                new StartPageViewModel() { Id = 1, Name = "Bart.png" },
-                new StartPageViewModel() { Id = 2, Name = "Bart2.png" },
-                new StartPageViewModel() { Id = 3, Name = "bear.png" },
-                new StartPageViewModel() { Id = 4, Name = "horse.png" },
-                new StartPageViewModel() { Id = 5, Name = "lion.png" },
-                new StartPageViewModel() { Id = 6, Name = "Olenb.png" },
-                new StartPageViewModel() { Id = 7, Name = "Olenb2.png" },
-                new StartPageViewModel() { Id = 8, Name = "One.png" }
+                new StartPageViewModel() { Id = 1, Name = "bear.png" },
+                new StartPageViewModel() { Id = 2, Name = "flower.png" },
+                new StartPageViewModel() { Id = 3, Name = "horse.png" },
+                new StartPageViewModel() { Id = 4, Name = "lion.png" },
+                new StartPageViewModel() { Id = 5, Name = "Olenb.png" },
+                new StartPageViewModel() { Id = 6, Name = "Olenb2.png" },
+                new StartPageViewModel() { Id = 7, Name = "One.png" }
             };
 
             OpenPictureCommand = new Command<StartPageViewModel>(OpenPicture);
             
-            
-            
-            //SaveCommand = new Command(SavePicture);
-            //BackCommand = new Command(Back);
+            SaveCommand = new Command(SavePicture);
+            BackCommand = new Command(Back);
         }
+
+        private void SavePicture(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Back(object obj)
+        {
+            Application.Current.MainPage.Navigation.PopAsync();
+        }
+
         private CollectionView collectionView;
         public CollectionView CollectionView
         {
@@ -60,7 +68,6 @@ namespace Hacaton_12.ViewModel
         {
             await Application.Current.MainPage.Navigation.PushAsync(new ImageView(startPageViewModel));
         }
-
         public StartPageViewModel SelectedImage
         {
             get { return selectedImage; }

@@ -17,15 +17,57 @@ namespace Hacaton_12.ViewModel
 
         #region cmd
         public ICommand OpenColorPicker { get; protected set; }
+        public ICommand BackCommand { get; protected set; }
+        public ICommand RefreshCommand { get; protected set; }
+        public ICommand SaveCommand { get; protected set; }
         #endregion
+
         #region ctor
         public StartPageViewModel()
         {
             Picture = new Picture();
             OpenColorPicker = new Command(OpenColorPickerPage);
-            
+            BackCommand = new Command(Back);
+            RefreshCommand = new Command(Refresh);
+            SaveCommand = new Command(Save);
         }
         #endregion
+
+        #region commandsImplementation
+        private void Save(object obj)
+        {
+            Application.Current.MainPage.DisplayAlert("Сохранено", "Иллюстрация сохранена.", "Ок");
+        }
+        private void Refresh(object obj)
+        {
+            if (Name == "One2.png")
+            {
+                Name = "One.png";
+            }
+            else if (Name == "Bart22.png")
+            {
+                Name = "bart.png";
+            }
+            else if (Name == "bear2.png")
+            {
+                Name = "bear.png";
+            }
+            else if (Name == "horse2.png")
+            {
+                Name = "horse.png";
+            }
+            else if (Name == "Olenb22.png")
+            {
+                Name = "Olenb.png";
+            }
+            else if (Name == "lion2.png")
+            {
+                Name = "lion.png";
+            }
+
+        }
+        #endregion
+
         public StartPageListViewModel ListViewModel
         {
             get { return _lvm; }
@@ -37,6 +79,10 @@ namespace Hacaton_12.ViewModel
                     OnPropertyChanged(nameof(ListViewModel));
                 }
             }
+        }
+        private void Back(object obj)
+        {
+            Application.Current.MainPage.Navigation.PopAsync();
         }
         public int Id
         {
@@ -55,6 +101,10 @@ namespace Hacaton_12.ViewModel
             get { return Picture.Name; }
             set
             {
+                if (Picture.Name == "One.png")
+                {
+                    ImageView.IsDraw = true;
+                }
                 if (Picture.Name != value)
                 {
                     Picture.Name = value;
@@ -62,7 +112,42 @@ namespace Hacaton_12.ViewModel
                 }
             }
         }
-
+        private Color oldColor;
+        private Color color;
+        public Color OldColor
+        {
+            get { return oldColor; }
+            set
+            {
+                if (OldColor != value)
+                {
+                    oldColor = value;
+                    OnPropertyChanged(nameof(OldColor));
+                }
+                else
+                {
+                    OldColor = Color.Black;
+                    OnPropertyChanged(nameof(OldColor));
+                }
+            }
+        }
+        public Color Color
+        {
+            get { return color; }
+            set
+            {
+                if (Color != value)
+                {
+                    color = value;
+                    OnPropertyChanged(nameof(Color));
+                }
+                else
+                {
+                    color = Color.Red;
+                    OnPropertyChanged(nameof(Color));
+                }
+            }
+        }
         private void OnPropertyChanged(string propName)
         {
             if (PropertyChanged != null)
@@ -70,7 +155,7 @@ namespace Hacaton_12.ViewModel
         }
         private void OpenColorPickerPage()
         {
-            Application.Current.MainPage.Navigation.PushModalAsync(new ColorPickerPage());
+            Application.Current.MainPage.Navigation.PushModalAsync(new ColorPickerPage(this));
         }
     }
 }

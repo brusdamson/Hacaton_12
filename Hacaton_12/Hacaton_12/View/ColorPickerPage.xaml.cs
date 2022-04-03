@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hacaton_12.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,18 @@ namespace Hacaton_12.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ColorPickerPage : ContentPage
     {
-        public ColorPickerPage()
+        private StartPageViewModel model;
+        public ColorPickerPage(StartPageViewModel spvm)
         {
             InitializeComponent();
+            model = spvm;
+        }
+
+        private void colorPicker_SelectedColorChanged(object sender, ColorPicker.BaseClasses.ColorPickerEventArgs.ColorChangedEventArgs e)
+        {
+            model.Color = e.NewColor;
+            model.OldColor = e.OldColor;
+
         }
     }
 }
